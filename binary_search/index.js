@@ -1,14 +1,13 @@
 function binary_search(arr, target) {
   let low = 0;
   let high = arr.length - 1; // 9
-
+  let mid;
   while (low <= high) {
-    let mid = low + Math.floor((high - low) / 2);
+    mid = low + Math.floor((high - low) / 2);
     console.log(mid); // 4
 
-    let gues = arr[mid];
-    if (gues == target) return mid;
-    if (gues > target) high = mid - 1;
+    if (arr[mid] == target) return mid;
+    if (arr[mid] > target) high = mid - 1;
     else low = mid + 1;
 
     return -1;
